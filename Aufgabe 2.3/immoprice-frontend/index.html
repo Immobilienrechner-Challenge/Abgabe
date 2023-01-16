@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Immoprice CH</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css">
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="#intro">Start</a></li>
+					<li><a id="one-button" href="#one">Eingaben</a></li>
+					<li><a id="two-button" href="#two">Optionale Eingaben</a></li>
+					<li><a id="results-button" href="#results">Ergebnisse</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Intro -->
+		<section id="intro" class="wrapper style2 fullscreen fade-up">
+			<div class="inner">
+				<h1>Immoprice</h1>
+				<p>Ein Projekt des Studiengangs B.Sc. Data Science der Fachhochschule Nordwestschweiz.<br>
+					Mit dieser Seite ist es möglich, einen Preisvorschlag für eine Immobilie zu machen.<br>
+					Wir übernehmen keine Haftung für jegliche Vorhersagen.</p>
+				<ul class="actions">
+					<li><a href="https://github.com/Immobilienrechner-Challenge" class="button scrolly">GitHub zur
+							Challenge</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- One -->
+		<section id="one" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h2>Eingabe der Informationen</h2>
+				<p>Bitte geben Sie hier die Informationen zu Ihrer Immobilie ein, um eine Preisvorhersage zu
+					erhalten.<br>
+					* = Pflichtfeld
+				</p>
+				<div id="api-inputs">
+					<div class="row">
+						<div class="col-xs-12 col-md-6" style="padding-right: 15px !important;">
+							<label class="title">Wohnfläche in m<sup>2</sup> *</label>
+							<input type="text" id="living_space" name="living_space">
+							<br>
+						</div>
+						<div class="col-xs-12 col-md-6" style="padding-right: 15px !important;">
+							<label class="title">Immobilientyp *</label>
+							<select name="type" id="type">
+								<option value="flat" selected>Wohnung</option>
+								<option value="single-room">Einzelzimmer</option>
+								<option value="studio">Studio</option>
+								<option value="penthouse">Penthouse</option>
+								<option value="attic-flat">Dachwohnung</option>
+								<option value="attic-room">Dachzimmer</option>
+								<option value="loft">Loft</option>¨
+								<option value="chalet">Chalet</option>
+								<option value="villa">Villa</option>
+								<option value="terrace-house">Terrassenhaus</option>
+								<option value="detached-house">Einfamilienhaus</option>
+								<option value="stepped-house">gestuftes Haus</option>
+								<option value="farmhouse">Bauernhaus</option>
+								<option value="semi-detached-house">Doppelhaushälfte</option>
+								<option value="stepped-apartment">gestufte Wohnung</option>
+								<option value="duplex-maisonette">Duplex-Maisonette</option>
+								<option value="secondary-suite">Zweithaus</option>
+								<option value="castle">Schloss</option>
+								<option value="detached-secondary-suite">Einzeln stehendes Zweithaus</option>
+								<option value="furnished-residential-property">Möblierte Wohnungen</option>
+								<option value="rustico">Rustico</option>
+							</select>
+							<br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-md-6" style="padding-right: 15px !important;">
+							<label class="title">Anzahl Räume *</label>
+							<input type="text" id="rooms" name="rooms">
+							<br>
+						</div>
+						<div class="col-xs-12 col-md-6" style="padding-right: 15px !important;">
+							<label class="title">Postleitzahl (1000-9999) *</label>
+							<input type="text" id="zip_code" name="zip_code">
+							<br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p id="warning" style="color: red;"></p>
+						</div>
+					</div>
+					<div>
+						<input type="submit" id="continueButton" name="continueButton" value="Fortfahren">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Two -->
+		<section id="two" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h2>Eingabe zusätzlicher Informationen</h2>
+				<p>Hier können Sie zusätzliche Informationen zu Ihrer Immobilie eingeben, um eine genauere
+					Preisvorhersage zu erhalten.<br> Die folgenden Angaben sind optional.
+				</p>
+				<div id="api-inputs">
+					<div class="row">
+						<div class="col-xs-12 col-md-6" style="padding-right: 15px !important;">
+							<label class="title">Nutzfläche in m<sup>2</sup></label>
+							<input type="text" id="floor_space" name="floor_space">
+							<br>
+						</div>
+						<div class="col-xs-12 col-md-6" style="padding-right: 15px !important;">
+							<label class="title">Grundstücksfläche in m<sup>2</sup></label>
+							<input type="text" id="plot_area" name="plot_area">
+							<br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-md-6" style="padding-right: 15px !important;">
+							<label class="title">Letztes Renovationsjahr</label>
+							<input type="text" id="last_refurbishment" name="last_refurbishment">
+							<br>
+						</div>
+						<div class="col-xs-12 col-md-6" style="padding-right: 15px !important;">
+							<label class="title">Baujahr</label>
+							<input type="text" id="year_built" name="year_built">
+							<br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p id="warning2" style="color: red;"></p>
+						</div>
+					</div>
+					<div>
+						<input type="submit" id="submit" name="submitButton" value="Vorhersage generieren">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Results -->
+		<section id="results" class="wrapper style3 fullscreen fade-up">
+			<div class="inner">
+				<h2>Ergebnisse</h2>
+				<h1>Ihre Immobilie hat den geschätzten Wert von <b id="predicted-price">ERROR</b> CHF.</h1>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Immoprice.ch | Ein Projekt des Studiengangs B.Sc. Data Science der Fachhochschule
+					Nordwestschweiz</li>
+				<li>Website Template: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- Website Logic -->
+	<script type="text/javascript">
+		$("#results").hide();
+		$("#results-button").hide();
+		$("#warning").hide();
+		$("#warning2").hide();
+
+		$("#continueButton").click(async (event) => {
+			$("#two-button").click();
+		});
+
+		$("#submit").click(async (event) => {
+			if (validateInput()) {
+				var living_space = $('#living_space').val();
+				var type = $('#type').val();
+				var rooms = $('#rooms').val();
+				var zip_code = $('#zip_code').val();
+				var floor_space = $('#floor_space').val();
+				var plot_area = $('#plot_area').val();
+				var last_refurbishment = $('#last_refurbishment').val();
+				var year_built = $('#year_built').val();
+				var url = `https://api.immoprice.ch/model1/?living_space=${living_space}&type=${type}&rooms=${rooms}&zip_code=${zip_code}`;
+
+				if (floor_space != "") {
+					url += `&floor_space=${floor_space}`;
+				}
+				if (plot_area != "") {
+					url += `&plot_area=${plot_area}`;
+				}
+				if (last_refurbishment != "") {
+					url += `&last_refurbishment=${last_refurbishment}`;
+				}
+				if (year_built != "") {
+					url += `&year_built=${year_built}`;
+				}
+
+				$.ajax({
+					url: url,
+					type: 'GET',
+					success: function (data) {
+						data = JSON.parse(data);
+						$('#predicted-price').text(Math.round(data['prediction']));
+						$("#results").show();
+						$("#results-button").show();
+						$("#results-button").click();
+					},
+					error: function (xhr, status, error) {
+						if (xhr.status == 500) {
+							$("#warning").text("Bitte geben Sie gültige Werte ein.");
+						} else {
+							$("#warning").text("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.");
+						}
+						$("#results").hide();
+						$("#results-button").hide();
+						$("#warning").slideDown(800);
+					}
+				});
+			}
+		});
+
+		function validateInput() {
+			errorBottom = false;
+			errorTop = false;
+			if ($('#living_space').val() == "" || isNaN($('#living_space').val())) {
+				$('#living_space').css("border", "1px solid red");
+				errorTop = true;
+			}
+			if ($('#rooms').val() == "" || isNaN($('#rooms').val())) {
+				$('#rooms').css("border", "1px solid red");
+				errorTop = true;
+			}
+			if ($('#zip_code').val() == "" || isNaN($('#zip_code').val())) {
+				$('#zip_code').css("border", "1px solid red");
+				errorTop = true;
+			}
+			if ($('#floor_space').val() != "" && isNaN($('#floor_space').val())) {
+				$('#floor_space').css("border", "1px solid red");
+				errorBottom = true;
+			}
+			if ($('#plot_area').val() != "" && isNaN($('#plot_area').val())) {
+				$('#plot_area').css("border", "1px solid red");
+				errorBottom = true;
+			}
+			if ($('#last_refurbishment').val() != "" && isNaN($('#last_refurbishment').val())) {
+				$('#last_refurbishment').css("border", "1px solid red");
+				errorBottom = true;
+			}
+			if ($('#year_built').val() != "" && isNaN($('#year_built').val())) {
+				$('#year_built').css("border", "1px solid red");
+				errorBottom = true;
+			}
+
+			if (errorTop) {
+				$("#one-button").click();
+				$("#warning").text("Bitte geben Sie gültige Werte ein.");
+				$("#warning").slideDown(800);
+				$("#results").hide();
+				$("#results-button").hide();
+			} else {
+				$("#two-button").click();
+				$("#one div div div div input").css("border", "1px solid rgba(255, 255, 255, 0.15)");
+				$("#warning").text("");
+				$("#warning").hide();
+			}
+			if (errorBottom) {
+				$("#warning2").text("Bitte geben Sie gültige Werte ein.");
+				$("#warning2").slideDown(800);
+				$("#results").hide();
+				$("#results-button").hide();
+			} else {
+				$("#two div div div div input").css("border", "1px solid rgba(255, 255, 255, 0.15)");
+				$("#warning2").text("");
+				$("#warning2").hide();
+			}
+
+			return (!errorBottom && !errorTop);
+		}
+	</script>
+
+</body>
+
+</html>
